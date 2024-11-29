@@ -1,27 +1,29 @@
-public class Tugas1 {
+import java.util.Scanner;
 
-  public static void main(String[] args) {
-      int n = 10; // Contoh nilai awal
-
-      System.out.println("Menggunakan fungsi rekursif:");
-      cetakRekursif(n);
-
-      System.out.println("\nMenggunakan fungsi iteratif:");
-      cetakIteratif(n);
+public class Tugas1{
+    public static void deretDescendingRekursif(int n) {
+  if (n < 0) { 
+      return;
   }
-
-  // Fungsi rekursif
-  public static void cetakRekursif(int n) {
-      if (n >= 0) {
-          System.out.print(n + " ");
-          cetakRekursif(n - 1);
-      }
+  System.out.print(n + " ");
+  deretDescendingRekursif(n - 1);
+}
+public static void deretDescendingIteratif(int n) {
+  for (int i = n; i >= 0; i--) { 
+      System.out.print(i + " ");
   }
+}
+public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  System.out.print("Masukkan nilai n: ");
+  int n = sc.nextInt();
 
-  // Fungsi iteratif
-  public static void cetakIteratif(int n) {
-      for (int i = n; i >= 0; i--) {
-          System.out.print(i + " ");
-      }
+  System.out.println("\nMenggunakan fungsi rekursif:");
+  deretDescendingRekursif(n);
+
+  System.out.println("\nMenggunakan fungsi iteratif:");
+  deretDescendingIteratif(n);
+
+  sc.close();
   }
 }
